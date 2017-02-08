@@ -1,21 +1,34 @@
-/**
- * Created by christian on 24/09/16.
- */
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
-import { AppComponent }  from './app.component';
-import { HeroDetailComponent } from './heroe-detail.component'
+import { RouterModule}   from '@angular/router';
+
+import { AppComponent}   from './app.component';
+import { HeroesComponent }  from './heroes.component';
+import { HeroDetailComponent } from './hero-detail.component';
+import { HeroService }  from './hero.service';
+import {DashboardComponent} from "./dashboard.component";
+
+import { AppRoutingModule }     from './app-routing.module';
+
 @NgModule({
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
-        HeroDetailComponent
+        DashboardComponent,
+        HeroDetailComponent,
+        HeroesComponent
+    ],
+    providers: [
+        HeroService
     ],
     bootstrap: [ AppComponent ]
+
 })
+
 export class AppModule { }
 
